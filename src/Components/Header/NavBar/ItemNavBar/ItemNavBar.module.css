@@ -1,0 +1,14 @@
+.ItemNavBar{
+    margin: 10px;
+}
+
+.ItemNavBar a{
+    text-decoration: none;
+    color: #383e56;
+}
+
+.ItemNavBar a:hover,
+.ItemNavBar a:focus{
+    color: #fb743e;
+}
+

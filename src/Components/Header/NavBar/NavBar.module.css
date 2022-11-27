@@ -1,0 +1,19 @@
+.NavBar{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.logOut{
+    border: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #fb743e;
+    color: white;
+}
+
+.logOut:hover{
+    background-color: #d3450d;
+    color: white;
+}

@@ -1,0 +1,6 @@
+
+.DisplayedArticles{
+    display: flex;
+    align-content: center;
+    flex-flow: row wrap;
+}
