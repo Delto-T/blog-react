@@ -4,7 +4,8 @@ import {useParams, useLocation, useNavigate, Link } from "react-router-dom";
 import axios from "../../../config/axios-firebase";
 import styles from "./article.module.css";
 import routes from '../../../config/routes';
-
+import moment from 'moment';
+import 'moment/locale/fr';
 
 
 function Article(props) {
@@ -40,7 +41,13 @@ function Article(props) {
         .catch(error => {
         console.log(error)
         });
+
     },[]);
+
+    // ComponentDidUpdate - Mettre le titre de l'artcile que l'onglet
+    useEffect(() => {
+        document.title = article.title;
+    });
 
     //Méthodes
 
@@ -63,7 +70,13 @@ function Article(props) {
                 console.log("error")
             }); 
     };
-    
+
+    // Variable
+    //let date = new Date(article.date).toLocaleDateString('fr-FR');
+
+    // Avec Moment JS
+    moment.locale('fr'); // Définir le moment en Francais
+    let date = moment.unix(article.date / 1000).calendar();
 
     //JSX
     return (
@@ -85,7 +98,7 @@ function Article(props) {
             <div className={styles.author}>
                 <b>{article.auteur}</b>
                 <span>
-                    Publié {article.date}.
+                    Publié {date}.
                 </span>
                 {article.etatBrouillon == "true" ? <span className={styles.badge}> Brouillon</span> : null}
             </div>

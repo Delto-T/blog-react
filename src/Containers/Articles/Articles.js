@@ -37,6 +37,11 @@ function Articles(props) {
              });
     },[]);
 
+    // ComponentDidUpdate - Mettre le titre de l'onglet
+    useEffect(() => {
+        document.title = 'Articles';
+    });
+
     //DisplayedArticles
 
 

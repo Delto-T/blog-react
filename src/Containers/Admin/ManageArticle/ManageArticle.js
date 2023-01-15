@@ -1,5 +1,5 @@
 //Library
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ManageArticle.module.css";
 import axios from '../../../config/axios-firebase';
 import { useNavigate, useLocation } from "react-router-dom";
@@ -102,6 +102,10 @@ function ManageArticle(props) {
 
     const[valid, setValid] = useState(stateArticle.state && stateArticle.state.article ? true : false);
 
+    // ComponentDidUpdate - Mettre le titre del'onglet
+    useEffect(() => {
+        document.title = 'Gérer un article';
+    });
 
     //Méthodes
         
@@ -178,7 +182,7 @@ function ManageArticle(props) {
                 axios.post("/blogArticles.json?auth=" + token, article)
                     .then(response => {
                         //console.log(response)
-                        navigate(routes.ARTICLES)
+                        navigate(routes.ARTICLES);
                     })
                     .catch(error => {
                         //console.log(error)

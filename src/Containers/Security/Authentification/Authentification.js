@@ -1,5 +1,5 @@
 //Library
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { checkValidity } from "../../../Shared/utility";
 import styles from "./Authentification.module.css";
 import { useNavigate } from "react-router-dom";
@@ -60,6 +60,10 @@ function Authentification () {
 
     const[loginError, setLoginError] = useState(false);
 
+    // ComponentDidUpdate - Mettre le titre de l'onglet
+    useEffect(() => {
+        document.title = 'Authentification';
+    });
 
 
     //Méthodes

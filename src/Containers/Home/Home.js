@@ -40,6 +40,12 @@ function Home(props) {
                 //console.log(error)
              });
     },[]);
+
+    // ComponentDidUpdate - Mettre le titre del'onglet
+    useEffect(() => {
+        document.title = 'Accueil';
+    });
+
     //JSX
     return (
         <>

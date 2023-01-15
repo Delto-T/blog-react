@@ -1,9 +1,14 @@
 //Library
-import React from "react";
+import {React, useEffect} from "react";
 import styles from "./Contacts.module.css"
 import { Outlet, Link} from 'react-router-dom';
 
 function Contacts() {
+
+    // ComponentDidUpdate - Mettre le titre de l'onglet
+    useEffect(() => {
+        document.title = 'Contacts';
+    });
 
     //Méthodes
 
